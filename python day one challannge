@@ -1,0 +1,35 @@
+name = input("Enter Full Name :")
+email = input("Enter Email ID :")
+mobile = input("Enter Mobile Number :")
+age = int(input("Enter Age :"))
+valid=True
+if valid:
+    if name.count(" ")<1 :
+        valid=False
+        print("Invalid: Full Name must contain at least two words")
+    elif name[0]==" " or name[-1]==" ":
+        valid=False
+        print("Invalid: Full Name must not start or end with a space")
+if valid :
+    if email.count('@')!=1 or email.count('.')!=1 or email.count('#')>0 or email.count('$')>0 or email.count('%')>0 or email.count('^')>0 or email.count('&')>0 or email.count('*')>0 or "(" in email or ")" in email or "_" in email or "+" in email or "=" in email or "!" in email or "~" in email or "`" in email or "/" in email or "\\" in email or "," in email or ";" in email or ":" in email or "'" in email or '"' in email or "<" in email or ">" in email:
+        valid=False
+        print("Invalid: Email should contain '@' and '.' only and it should not contain special characters")
+        
+    elif email[0]=='@':
+        valid=False
+        print("Invalid: Email must not start with '@'")
+if valid :
+    if len(mobile)!=10 or not mobile.isdigit() :
+        valid=False
+        print("Invalid: Mobile Number must be exactly 10 digits and contain only digits")
+    elif mobile[0]=='0':
+        valid=False
+        print("Invalid: Mobile Number must not start with 0")
+if valid :
+    if age<18 or age>60:
+        valid=False
+        print("Invalid : Age Should be between 18 and 60")
+if valid:
+    print("User Profile is valid")
+else:
+    print("User Profile is Invalid")
